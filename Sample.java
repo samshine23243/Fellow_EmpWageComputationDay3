@@ -1,9 +1,15 @@
 
 public class Sample {
+	int rateperhr=20;
+	int dailyhr=8;
 	double Attendance()
 	{
 		double temp=Math.floor(Math.random()*10)%2;
 		return temp;
+	}
+	void DailyWage()
+	{
+		System.out.println("Daily wage for employee:"+(rateperhr*dailyhr));
 	}
 
 	public static void main(String[] args) {
@@ -19,6 +25,7 @@ public class Sample {
 		{
 			System.out.println("employee present...");
 		}
+		obj.DailyWage();
 
 	}
 
