@@ -11,6 +11,10 @@ public class Sample {
 	{
 		System.out.println("Daily wage for employee:"+(rateperhr*dailyhr));
 	}
+	void Part_time()
+	{
+		System.out.println("part time employee wage:"+(rateperhr*8));
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,6 +30,7 @@ public class Sample {
 			System.out.println("employee present...");
 		}
 		obj.DailyWage();
+		obj.Part_time();
 
 	}
 
