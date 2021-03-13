@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Sample {
-	int rateperhr=20;
+	/*int rateperhr=20;
 	int dailyhr=8;
 	Scanner sc=new Scanner(System.in);
 	double Attendance()
@@ -56,15 +56,61 @@ public class Sample {
 			break;
 		default :
 			System.out.println("wrong input...");
+		}*/
+		
+		//////////////Day6////////////
+		
+		public static final int IS_PART_TIME=1;
+		public static final int IS_FULL_TIME=2;
+		public static final int IS_ABSENT=0;
+		private int EMPLOYEE_RATE_PER_HR;
+		private int NUM_OF_WORKING_DAYS;
+		private int MAX_HRS_IN_MONTH;
+		private String COMPANY;
+		Sample(String Company,int Rate_Per_Hr,int Num_Working_Days,int max_hrs)
+		{
+			this.COMPANY=Company;
+			this.EMPLOYEE_RATE_PER_HR=Rate_Per_Hr;
+			this.NUM_OF_WORKING_DAYS=Num_Working_Days;
+			this.MAX_HRS_IN_MONTH=max_hrs;
 		}
+		void calculate()
+		{
+			int TotalWorkingDays=0,TotalHrs=0;
+			while(TotalWorkingDays<=NUM_OF_WORKING_DAYS && TotalHrs<=MAX_HRS_IN_MONTH)
+			{
+				int check=(int)Math.floor(Math.random()*10)%3;
+				switch(check)
+				{
+				case 0:
+					TotalWorkingDays=TotalWorkingDays+0;
+					TotalHrs=TotalHrs+0;
+					break;
+				case 1:
+					TotalWorkingDays=(int) (TotalWorkingDays+0.5);
+					TotalHrs=TotalHrs+4;
+					break;
+				case 2:
+					TotalWorkingDays=TotalWorkingDays+1;
+					TotalHrs=TotalHrs+8;
+					break;
+				}
+			}
+			System.out.println("Working days for employee:"+TotalWorkingDays);
+			System.out.println("Total wage for emp at "+ COMPANY+" is:"+(TotalHrs*EMPLOYEE_RATE_PER_HR));
+		}
+		
+		
+		
+		
 			
-	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to employee wage computation....");
-		Sample obj=new Sample();
-		double attendance=obj.Attendance();
+		Sample dmart=new Sample("Dmart",20,30,100);
+		Sample kmart=new Sample("kmart",15,20,150);
+		/*double attendance=obj.Attendance();
 		if(attendance==0)
 		{
 			System.out.println("Employee absent...");
@@ -75,7 +121,9 @@ public class Sample {
 		}
 		obj.DailyWage();
 		obj.Part_time();
-		obj.UC();
+		obj.UC();*/
+		dmart.calculate();
+		kmart.calculate();
 
 	}
 
